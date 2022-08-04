@@ -1,3 +1,6 @@
+$main_color: #1eacc7
+$second-color: #ff5656
+  
 *
   font-family: 'Roboto', sans-serif
 
@@ -132,6 +135,7 @@ nav
   padding: 20px 0 64px 0
 
 .label
+  position: relative
   margin: 0 auto
   width: 115px
   height: 27px
@@ -142,8 +146,15 @@ nav
   text-transform: uppercase
   color: #FFFFFF
   line-height: 30px
+  z-index: 2
+  &_white
+    background: #FFFFFF
+    color: #070716
+    &_min
+      width: 76px
 
 .title
+  position: relative
   margin-top: 33px
   font-weight: 700
   font-size: 38px
@@ -151,13 +162,20 @@ nav
   text-align: center
   text-transform: uppercase
   color: #222222
+  z-index: 2
+  &_white
+    color: #FFFFFF
 
 .subtitle
+    position: relative
     margin-top: 15px
     font-weight: 400
     font-size: 17px
     color: #222222
     text-align: center
+    z-index: 2
+    &_white
+      color: #FFFFFF
 
 .reasons .reasons_block
   display: flex
@@ -237,3 +255,104 @@ nav
             border-radius: 100%
             margin: 0 auto
             cursor: pointer
+            &::before
+              content: ''
+              display: block
+              width: 14px
+              height: 2px
+              background-color: $main_color
+              transition: 0.3s all
+            &::after
+              content: ''
+              position: absolute
+              display: block
+              height: 14px
+              width: 2px
+              background-color: $main_color
+              transition: 0.3s all
+            &:hover
+              &::before, &::after
+                background-color: $second_color 
+
+.choise
+  position: relative
+  min-height: 898px
+  padding: 56px 0 137px 0
+  background: url('../img/bg/mobile_app.png') center (center / cover) no-repeat
+  &_img
+    position: relative
+    display: block
+    margin: 56px auto 0 auto
+    z-index: 2
+  &_descr
+    font-weight: 300
+    font-size: 17px
+    line-height: 24px
+    text-align: center
+    color: #222222
+  .black
+    position: absolute
+    left: 0
+    top: 0
+    height: 502px
+    width: 100%
+    background: #070716
+    z-index: 1
+
+.require
+  padding: 68px 0 89px 0
+  &_block
+    margin: 33px 0
+    &_nbm
+      margin-bottom: 0px
+  &_title
+    font-weight: 400
+    font-size: 22px
+    line-height: 24px
+    color: #1CA8C3
+  &_list
+    list-style-type: none
+    padding-left: 50px
+    margin-top: 22px
+    li
+      position: relative
+      font-weight: 300
+      font-size: 17px
+      line-height: 30px
+      color: #222222
+      &::before
+        content: ''
+        display: block
+        position: absolute
+        left: -32px
+        top: 3px
+        width: 21px
+        height: 20px
+        background: url(../icons/check_blue.svg) center (center / cover) no-repeat
+  &_descr
+    margin-top: 25px
+    font-size: 17px
+    font-weight: 300
+    line-height: 24px
+    color: #1CA8C3
+  .warning
+    .require_title
+      color: $second-color
+    .require_list
+      li
+        &::before
+          background: url('../icons/check_red.svg') center (center / cover) no-repeat
+
+.world
+  min-height: 720px
+  padding: 48px 0 22px 0
+  background: url('../img/bg/map.jpg') center (center / cover) no-repeat
+  &_link
+    display: block
+    margin-top: 430px
+    font-weight: 400
+    font-size: 15px
+    line-height: 68px
+    text-align: center
+    text-transform: uppercase
+    color: #1FBAD6
